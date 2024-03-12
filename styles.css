@@ -1,0 +1,834 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap');
+/* Animacion Para subrayar el titulo */
+@keyframes underline {
+    0% {
+        width: 0; /* La línea comienza con ancho cero */
+    }
+    100% {
+        width: 100%; /* La línea se extiende hasta el final del texto */
+    }
+}
+
+/* Animacion Parallax para que los elementos vayan de izquierda derecha o viseverza */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideIn2 {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Estilos generales */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, Arial;
+    color: #fff;
+    background: linear-gradient(135deg, #010101, #6C6669);
+    background-size: 300% 300%;
+    position: relative;
+    height: auto;
+    width: 100%;
+
+}
+header {
+    background: #252422;
+    padding: 20px 0;
+    -webkit-box-shadow:0px 0px 73px 6px rgba(158,12,158,0.9);
+    -moz-box-shadow: 0px 0px 73px 6px rgba(158,12,158,0.9);
+    box-shadow: 0px 0px 73px 6px rgba(158,12,158,0.9);
+    
+}
+/* Estilos para el botón hamburguesa */
+.menu-toggle {
+    display: none; /* Oculta el botón por defecto */
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(37, 36, 34, 0.8); 
+    padding: 20px 0;
+    display: flex; /* Usa flexbox */
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    -webkit-box-shadow: 0px 0px 73px 6px rgba(158, 12, 158, 0.9);
+    -moz-box-shadow: 0px 0px 73px 6px rgba(158, 12, 158, 0.9);
+    box-shadow: 0px 0px 73px 6px rgba(158, 12, 158, 0.9);
+}
+
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list li {
+    margin-left: 64px;
+}
+
+.list li:first-child {
+    margin-left: 0;
+}
+
+.list li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    position: relative;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.list li a:before,
+.list li a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #A90F99;
+    bottom: -8px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    box-shadow: 0px 0px 103px 6px rgba(158,12,158,0.9);
+}
+
+.list li a:after {
+    top: -8px;
+    bottom: auto;
+}
+
+.list li a:hover:before,
+.list li a:hover:after {
+    transform: scaleX(1);
+}
+
+.list li a:hover {
+    color: rgba(158,12,158,0.9); /* Color de brillo */
+        }
+/*-------------------------------------------------------*/
+
+/* CONTENIDO DEL SOBRE MI */
+.container-inicio {
+    margin-top: 84px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Carta de Presentacion de mi mismo */
+
+
+.card {
+    width: 400px;
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    text-align: center;
+    -webkit-box-shadow:0px 0px 103px 6px rgba(158,12,158,0.9);
+    -moz-box-shadow: 0px 0px 103px 6px rgba(158,12,158,0.9);
+    box-shadow: 0px 0px 13px 6px rgba(158,12,158,0.9);
+    flex-direction: row;
+    overflow: hidden;
+    height: auto;
+    margin: 32px 32px 0px 24px;
+    z-index: 9;
+}
+.slideIn2 {
+    animation: slideIn2 1.5s ease-in-out forwards;
+    z-index: 9;
+}
+
+.slideIn {
+    animation: slideIn 1.5s ease-in-out forwards;
+    z-index: 9;
+}
+.container-img {
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    overflow: hidden; /* Oculta parte de la imagen que esté fuera del círculo */
+    margin: 0 auto 20px; 
+}
+
+.profile-img {
+    width: 100%; /* Para que la imagen ocupe todo el espacio dentro del contenedor */
+    height: auto; 
+}
+
+.social-icons {
+    margin-top: 20px; 
+    display: flex;
+    justify-content: center;
+    
+}
+
+.social-icons a {
+    margin-right: 10px; /* Espacio entre los íconos */
+    text-decoration: none;
+}
+.sobre-mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 0px; 
+    position: relative;
+    z-index: 9;
+    opacity: 0;
+    overflow: hidden;
+}
+/* ------------Termina el card---------------------- */
+/* Texto Sobre mi */
+.sobre-mi h1 {
+    position: relative;
+    overflow: hidden;
+    font-size: 64px;
+    margin: 0;
+    padding: 0;
+    align-self: flex-start;
+}
+
+.sobre-mi h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 2px;
+    background: linear-gradient(to right, #A90F99, #A90F99, transparent); 
+    animation: underline 2s infinite alternate;
+}
+
+.sobre-mi p {
+    width: 800px;
+}
+/* ---------------Termina el texto sobre mi------------------- */
+
+/* Estilo para el boton de descargar cv */
+.btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #360033, #02181a);
+    color: white;
+    border: solid 1px transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; 
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: solid 2px #d851ca; 
+    transition: transform 0.3s ease-in-out; /* Transición */
+    transform: scaleX(0); /* Inicialmente oculto */
+    transform-origin: left; 
+}
+
+.btn:hover::before {
+    transform: scaleX(1); /* Mostrar gradualmente al hacer hover */
+}
+/* -----------------------------------TERMINA EL BOTON-------------------- */
+
+/* Crear animaciones para subrayar un titulo */
+
+/* ------------------------------Termina Animacion de subrayado------------------------------------- */
+
+/* Animacion Parallax para que los elementos vayan de izquierda derecha o viseverza */
+
+
+
+/* SEGUNDA SECCION DE PROYECTOS */
+.container-proyecto {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative; /* Posicionamos de forma relativa para que los hijos puedan usar z-index */
+    z-index: 1; /* Ajustamos el índice z para que esté detrás del contenido */
+    margin: 36px 32px 0 36px;
+}
+
+.proyectos {
+    background-color: transparent; /* Establecemos el color de fondo de la sección a transparente */
+    position: relative; /* Posicionamos de forma relativa para que los hijos puedan usar z-index */
+    z-index: 2; /* Ajustamos el índice z para que esté delante del fondo */
+}
+
+.proyectos h1 {
+    position: relative;
+    overflow: hidden;
+    font-size: 64px;
+    margin: 0;
+    margin-top: 160px;
+    padding: 0;
+    align-self: flex-start; 
+    display: inline;
+}
+
+.proyectos h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 2px;
+    background: linear-gradient(to right, #A90F99, #A90F99, transparent); 
+    animation: underline 2s infinite alternate;
+}
+
+.carousel-container {
+    overflow-x: auto; /* Permitir desplazamiento horizontal si las tarjetas no caben */
+    white-space: nowrap; /* Evitar que las tarjetas se rompan en varias líneas */
+    padding: 20px 0; /* Espacio alrededor del carrusel */
+    display: flex; /* Mostrar las tarjetas en una línea */
+    flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan a una segunda línea */
+}
+
+.card-slider {
+    width: 300px; /* Ancho fijo para cada tarjeta */
+    margin-right: 20px; /* Espacio entre las tarjetas */
+    margin-bottom: 20px; /* Espacio entre las filas */
+    background: linear-gradient(135deg, #360033, #02181a); /* Gradiente de color para las tarjetas */
+    border-radius: 10px; /* Borde redondeado */
+    overflow: hidden; /* Para que las esquinas redondeadas se muestren correctamente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.card-slider:last-child {
+    margin-right: 0; /* Eliminar el margen derecho de la última tarjeta en cada fila */
+}
+
+.card-prt img {
+    width: 100%; /* Ajustar la imagen al ancho de la tarjeta */
+    height: 200px; /* Mantener la proporción de la imagen */
+}
+
+.card-prt-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.etiquetas-prt {
+    margin-top: 10px;
+}
+
+.etiqueta-prt {
+    background-color: rgba(255, 255, 255, 0.1); /* Color de fondo semi-transparente */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px; /* Borde redondeado */
+    margin-right: 5px; /* Espacio entre las etiquetas */
+}
+
+.card-prt-info a {
+    display: block;
+    background: linear-gradient(135deg, #A90F99, #02181a);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px; /* Borde redondeado */
+    margin-top: 10px;
+}
+
+.card-prt-info a:hover {
+    transform: translateY(4px);
+    background-color: #7F0B6B; /* Color de fondo del botón al pasar el ratón */
+}
+.container-exp {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    margin: 36px 32px 0 36px;
+}
+
+.experiencia {
+    background-color: transparent; /* Establecemos el color de fondo de la sección a transparente */
+    position: relative; /* Posicionamos de forma relativa para que los hijos puedan usar z-index */
+    z-index: 2; /* Ajustamos el índice z para que esté delante del fondo */
+
+}
+
+.container-exp-img {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 64px;
+}
+
+.text-content {
+    flex:1;
+}
+
+.experiencia p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+.experiencia h1 {
+    position: relative;
+    overflow: hidden;
+    font-size: 64px;
+    margin: 0;
+    margin-top: 160px;
+    padding: 0;
+    align-self: flex-start; 
+    display: inline;
+}
+
+.container-exp-img h1 {
+    font-size: 48px;
+    margin: 0; /* Eliminar todos los márgenes */
+    padding: 0;
+    overflow: hidden;
+    align-self: start; /* Alinear el título hacia arriba */
+}
+
+.experiencia h1 {
+    position: relative;
+    overflow: hidden;
+    font-size: 64px;
+    margin: 0;
+    margin-top: 160px;
+    padding: 0;
+    align-self: flex-start; 
+    display: inline;
+}
+
+.container-exp-img h1{
+    font-size: 48px;
+    margin: 0; /* Eliminar todos los márgenes */
+    padding: 0;
+    overflow: hidden;
+    align-self: start; /* Alinear el título hacia arriba */
+    
+}
+
+.experiencia h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 2px;
+    background: linear-gradient(to right, #A90F99, #A90F99, transparent); 
+    animation: underline 2s infinite alternate;
+
+}
+
+.text-content .subtitulo {
+    font-size: 24px;
+}
+
+
+.experiencia > .container-exp-img {
+    grid-column: 2;
+    
+}
+
+.experiencia img {
+    height: 180px;
+    width: 200px;
+    margin-right: 20px; /* Añadimos margen a la derecha de la imagen para separarla del texto */
+    grid-column: 1;
+    align-self: start;
+}
+
+.container-con {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    margin: 36px 32px 0 36px;
+    justify-content: space-between; /* Distribuye el espacio entre las dos secciones */
+    margin: 36px 32px 0 36px;
+}
+
+
+
+
+.conocimientos h1 {
+    position: relative;
+    overflow: hidden;
+    font-size: 64px;
+    margin: 64px 0 0 0;
+    padding: 0;
+    align-self: flex-start;
+}
+
+
+
+.conocimientos h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 2px;
+    background: linear-gradient(to right, #A90F99, #A90F99, transparent); 
+    animation: underline 2s infinite alternate;
+}
+
+.conocimientos h2{
+    font-size: 32px;
+}
+.conocimientos span{
+    font-size: 22px;
+}
+
+.skill-container {
+    position: relative;
+    width: 320px;
+    padding: 0 20px;
+    border: 2px solid #A90F99;
+}
+
+.skill-container .skill {
+    margin: 20px 0;
+}
+
+.skill-container .skill p {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-container .skill .pogress {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #999;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+.skill-container .skill .pogress::before {
+    content: '';
+    position: absolute;
+    width: var(--wth);
+    height: 100%;
+    background: linear-gradient(135deg, #6f64e7, #A90F99);   
+}
+
+.container-con {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Dos columnas */
+    grid-gap: 20px; /* Espacio entre columnas */
+    margin: 36px 32px 0 36px;
+}
+
+.titulo {
+    grid-column: 1 / -1; /* Ocupa todas las columnas disponibles */
+    margin-bottom: 20px; /* Espacio entre el título y las columnas */
+}
+
+.container-con {
+    display: grid;
+    grid-template-columns: auto auto 1fr; /* Las dos primeras columnas ocupan el espacio necesario y la tercera ocupa el espacio restante */
+    grid-gap: 20px; /* Espacio entre columnas */
+    margin: 36px 32px 0 36px;
+}
+
+
+.conocimientos {
+    display: grid;
+    grid-template-columns: auto auto 1fr; /* Las dos primeras columnas ocupan el espacio necesario y la tercera ocupa el espacio restante */
+    grid-gap: 20px; /* Espacio entre columnas */
+}
+
+footer {
+    padding: 2rem 8%;
+    background: linear-gradient(135deg, #360033, #02181a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 120px;
+}
+
+.social-icon {
+    position: relative;
+    display: inline-block;
+    width: 32px; /* Ancho del icono */
+    height: 32px; /* Alto del icono */
+}
+
+.social-icon svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 20px; /* Espacio entre los íconos */
+}
+
+.social-icons a:hover svg path {
+    opacity: 0.5; /* Cambia la opacidad según lo desees */
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .container-card {
+        flex-direction: column; /* Cambia a una columna en dispositivos más pequeños */
+        align-items: center; /* Centra las tarjetas horizontalmenete */
+    }
+
+    .card {
+        width: 100%; /* Ancho completo en dispositivos más pequeños */
+        margin: 10px 64px 10px 64px; /* Espacio entre las tarjetas */
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Muestra el botón en dispositivos pequeños */
+        text-align: center;
+    }
+
+    .list {
+        display: none; /* Oculta la lista de enlaces por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(37, 36, 34, 0.8);
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    .list li {
+        margin: 10px 0;
+    }
+
+    .list li:first-child {
+        margin-top: 0;
+    }
+
+    /* Estilos para mostrar la lista cuando se active el botón */
+    .list.active {
+        display: flex;
+    }
+}
+/* Media query para dispositivos con una pantalla de hasta 768px de ancho */
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cambiamos a auto-fill */
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .card-slider {
+        width: 100%;
+        min-width: 200px;
+    }
+
+    .card-prt-info {
+        padding: 10px; /* Reducimos el padding */
+    }
+
+    .card-prt-info h2 {
+        font-size: 18px; /* Reducir el tamaño del texto del título */
+    }
+
+    .card-prt-info p {
+        font-size: 14px; /* Reducir el tamaño del texto de la descripción */
+    }
+
+    .etiqueta-prt {
+        padding: 3px 6px; /* Reducimos el padding de las etiquetas */
+        font-size: 12px; /* Reducimos el tamaño del texto de las etiquetas */
+    }
+
+    .card-prt-info a {
+        padding: 8px 16px; /* Reducimos el padding del enlace */
+        font-size: 14px; /* Reducimos el tamaño del texto del enlace */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-container {
+        display: block; /* Cambiar a bloque para que las tarjetas se muestren una debajo de la otra */
+    }
+
+    .card-slider {
+        width: 100%; /* Ancho completo para cada tarjeta */
+        margin-right: 0; /* Eliminar el margen derecho para que las tarjetas ocupen todo el ancho disponible */
+    }
+    .card {
+        width: 100%; /* Ancho completo en dispositivos más pequeños */
+        margin: 10px 120px; /* Espacio entre las tarjetas */
+        overflow: hidden;
+    }
+        .container-card {
+        flex-direction: column; /* Cambia a una columna en dispositivos más pequeños */
+        align-items: center; /* Centra las tarjetas horizontalmente */
+    }
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .container-card {
+        flex-direction: column; /* Cambia a una columna en dispositivos más pequeños */
+        align-items: center; /* Centra las tarjetas horizontalmente */
+    }
+
+    .card {
+        width: calc(100% - 40px); /* Ancho completo con margen a los lados */
+        margin: 10px 20px; /* Espacio entre las tarjetas */
+        overflow: hidden;
+    }
+
+    .sobre-mi p {
+        width: calc(100% - 40px); /* Ancho completo con margen a los lados */
+        margin: 0 20px; /* Margen a los lados */
+    }
+}
+
+/* Media query para dispositivos con un ancho máximo de 768px */
+/* Media query para dispositivos con un ancho máximo de 768px */
+@media only screen and (max-width: 768px) {
+    .container-exp .container-exp-img {
+
+        flex-direction: column; /* Cambia la dirección de flexión a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        margin-top: 32px; /* Ajusta el margen superior */
+    }
+    .container-exp h1 {
+        font-size: 32px;
+
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .container-exp .container-exp-img img {
+        margin-right: 0; /* Elimina el margen derecho de las imágenes */
+        margin-bottom: 20px; /* Añade un margen inferior entre las imágenes */
+        width: auto;
+    }
+
+    .container-con .columna-conocimiento {
+        display: flex; /* Cambia el contenedor a flexbox */
+        flex-wrap: wrap; /* Envuelve los elementos en múltiples líneas si es necesario */
+        justify-content: space-between; /* Distribuye los elementos de manera uniforme */
+    }
+    
+    /* Ajuste del texto para dispositivos más pequeños */
+    .container-exp p,
+    .container-con p,
+    .container-con h2 {
+        word-wrap: break-word; /* Permite que las palabras largas se rompan y se ajusten al ancho disponible */
+    }
+    .container-con .titulo h1 {
+        font-size: 38px; /* Tamaño de fuente más pequeño para el título de conocimientos */
+    }
+
+    .sobre-mi h1{
+        font-size:38px ;
+        margin-left: 82px;
+    }
+    .container-proyecto h1 {
+        font-size:38px ;
+
+
+    }
+}
+
+/* Media query para dispositivos con un ancho máximo de 576px */
+@media only screen and (max-width: 576px) {
+    .container-con .conocimientos {
+        display: grid;
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-gap: 20px; /* Espacio entre elementos */
+    }
+
+    .container-con .columna-conocimiento {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+    .container-con span {
+        margin-right: 100px;
+    }
+    .container-exp p,
+    .container-con p,
+    .container-con h2
+    .container-con span {
+        word-wrap: break-word; /* Permite que las palabras largas se rompan y se ajusten al ancho disponible */
+    }
+    /* Estilos para el footer */
+    #footer {
+        text-align: center; /* Alinea el texto al centro */
+    }
+
+    #footer .social-icons {
+        margin-bottom: 20px; /* Añade un margen inferior para separar los iconos sociales del texto */
+    }
+
+    /* Estilos para el span dentro de la sección de estudios */
+    .container-con #conocimiento span {
+        display: block; /* Convierte el span en un elemento de bloque */
+        max-width: 90%; /* Establece un ancho máximo del 90% del ancho de la pantalla */
+        margin: 0 auto; /* Centra el texto horizontalmente */
+    }
+    .container-con #conocimiento span {
+        max-width: 100%; /* Establece un ancho máximo del 100% del ancho de la pantalla */
+    }
+}
+
+
