@@ -793,6 +793,10 @@ footer {
 
 /* Media query para dispositivos con un ancho máximo de 576px */
 @media only screen and (max-width: 576px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
     .container-con .conocimientos {
         display: grid;
         grid-template-columns: 1fr; /* Una sola columna */
@@ -814,6 +818,8 @@ footer {
     /* Estilos para el footer */
     #footer {
         text-align: center; /* Alinea el texto al centro */
+        width: 100%;
+        margin: 0
     }
 
     #footer .social-icons {
