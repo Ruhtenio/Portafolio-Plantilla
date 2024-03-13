@@ -789,6 +789,9 @@ footer {
 
 
     }
+    footer {
+        width: 100%;
+    }
 }
 
 /* Media query para dispositivos con un ancho máximo de 576px */
@@ -819,7 +822,7 @@ footer {
     #footer {
         text-align: center; /* Alinea el texto al centro */
         width: 100%;
-        margin: 0
+        margin: 0;
     }
 
     #footer .social-icons {
